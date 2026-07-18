@@ -1,0 +1,62 @@
+[
+  {
+    "reg_id": "OISD-STD-105",
+    "title": "OISD-STD-105 — Work Permit System",
+    "excerpt": "A work permit shall be issued only after verifying that operating conditions in the area are within safe limits; permits shall be suspended immediately upon abnormal process conditions.",
+    "rules": ["R4", "R5", "R9"]
+  },
+  {
+    "reg_id": "OISD-GDN-206",
+    "title": "OISD-GDN-206 — Safety in Confined Space Entry",
+    "excerpt": "Entry into confined spaces shall be prohibited when gas concentration or pressure conditions deviate from certified safe limits; continuous gas monitoring is mandatory during occupancy.",
+    "rules": ["R4"]
+  },
+  {
+    "reg_id": "FactoriesAct-36",
+    "title": "Factories Act 1948, Section 36 — Precautions against dangerous fumes/gases",
+    "excerpt": "No person shall be required or allowed to enter any chamber, tank, vat, pit or other confined space in which any gas, fume, vapour or dust is likely to be present to such an extent as to involve risk to persons.",
+    "rules": ["R4", "R8"]
+  },
+  {
+    "reg_id": "FactoriesAct-38",
+    "title": "Factories Act 1948, Section 38 — Precautions in case of fire",
+    "excerpt": "In every factory, all practicable measures shall be taken to prevent outbreak of fire and its spread, both internally and externally; sources of ignition shall be controlled in areas where flammable atmospheres may occur.",
+    "rules": ["R5"]
+  },
+  {
+    "reg_id": "OISD-STD-155",
+    "title": "OISD-STD-155 — Personal Protective Equipment & Exposure Control",
+    "excerpt": "Personnel exposure to hazardous atmospheres shall be minimised through engineering controls and work scheduling; personnel presence in high-risk areas shall be restricted during abnormal operating conditions.",
+    "rules": ["R7"]
+  },
+  {
+    "reg_id": "DGMS-Tech-Circular-01",
+    "title": "DGMS Technical Circular — Continuous Gas Monitoring",
+    "excerpt": "Environmental monitoring systems shall trigger graded responses on sustained adverse trends in gas concentration, and not solely on absolute threshold breach.",
+    "rules": ["R1", "R2", "R8"]
+  },
+  {
+    "reg_id": "IS-15656",
+    "title": "IS 15656 — Hazard Identification and Risk Analysis",
+    "excerpt": "Risk assessment shall consider concurrent operations and the interaction of simultaneous hazards, which may aggregate to an unacceptable risk even where individual hazards are tolerable.",
+    "rules": ["R4", "R5", "R9", "R6"]
+  },
+  {
+    "reg_id": "OISD-STD-116",
+    "title": "OISD-STD-116 — Fire Protection in Process Plants",
+    "excerpt": "Hot work in the vicinity of hydrocarbon or toxic gas sources shall be governed by gas testing immediately prior to and continuously during the activity.",
+    "rules": ["R5"]
+  },
+  {
+    "reg_id": "FactoriesAct-41B",
+    "title": "Factories Act 1948, Section 41B — Compulsory disclosure by hazardous units",
+    "excerpt": "Occupiers of hazardous process factories shall maintain accurate and current safety information, including emergency response plans, and shall communicate hazards to workers.",
+    "rules": ["R6", "R7"]
+  },
+  {
+    "reg_id": "PNGRB-Pressure",
+    "title": "PNGRB Guidelines — Pressure System Integrity",
+    "excerpt": "Abnormal pressure excursions in process equipment shall be investigated immediately; sustained deviation from operating envelope constitutes a reportable near-miss.",
+    "rules": ["R3"]
+  }
+]

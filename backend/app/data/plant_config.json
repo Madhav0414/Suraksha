@@ -1,0 +1,75 @@
+{
+  "name": "SURAKSHA Demo Steel Plant",
+  "canvas": { "width": 1000, "height": 600 },
+  "shift_length_minutes": 480,
+  "zones": [
+    {
+      "id": "coke_oven",
+      "name": "Coke Oven Battery",
+      "x": 40, "y": 60, "w": 260, "h": 180,
+      "hazard_class": "A",
+      "workers": 4,
+      "sensors": [
+        { "id": "co_cob_1", "kind": "CO", "unit": "ppm", "baseline": 8.0, "critical": 100.0, "noise": 0.6 },
+        { "id": "ch4_cob_1", "kind": "CH4", "unit": "%LEL", "baseline": 4.0, "critical": 50.0, "noise": 0.4 },
+        { "id": "prs_cob_1", "kind": "pressure", "unit": "kPa", "baseline": 104.0, "critical": 180.0, "noise": 0.5 },
+        { "id": "tmp_cob_1", "kind": "temp", "unit": "°C", "baseline": 82.0, "critical": 300.0, "noise": 1.2 }
+      ]
+    },
+    {
+      "id": "blast_furnace",
+      "name": "Blast Furnace",
+      "x": 340, "y": 60, "w": 240, "h": 180,
+      "hazard_class": "A",
+      "workers": 6,
+      "sensors": [
+        { "id": "co_bf_1", "kind": "CO", "unit": "ppm", "baseline": 10.0, "critical": 100.0, "noise": 0.7 },
+        { "id": "tmp_bf_1", "kind": "temp", "unit": "°C", "baseline": 120.0, "critical": 400.0, "noise": 2.0 },
+        { "id": "prs_bf_1", "kind": "pressure", "unit": "kPa", "baseline": 110.0, "critical": 200.0, "noise": 0.6 }
+      ]
+    },
+    {
+      "id": "rolling_mill",
+      "name": "Rolling Mill",
+      "x": 620, "y": 60, "w": 330, "h": 160,
+      "hazard_class": "B",
+      "workers": 8,
+      "sensors": [
+        { "id": "tmp_rm_1", "kind": "temp", "unit": "°C", "baseline": 60.0, "critical": 250.0, "noise": 1.5 },
+        { "id": "co_rm_1", "kind": "CO", "unit": "ppm", "baseline": 4.0, "critical": 100.0, "noise": 0.4 }
+      ]
+    },
+    {
+      "id": "storage_yard",
+      "name": "Fuel Storage Yard",
+      "x": 40, "y": 290, "w": 280, "h": 240,
+      "hazard_class": "B",
+      "workers": 2,
+      "sensors": [
+        { "id": "ch4_sy_1", "kind": "CH4", "unit": "%LEL", "baseline": 3.0, "critical": 50.0, "noise": 0.4 },
+        { "id": "h2s_sy_1", "kind": "H2S", "unit": "ppm", "baseline": 1.0, "critical": 20.0, "noise": 0.15 }
+      ]
+    },
+    {
+      "id": "power_plant",
+      "name": "Captive Power Plant",
+      "x": 360, "y": 280, "w": 260, "h": 200,
+      "hazard_class": "B",
+      "workers": 3,
+      "sensors": [
+        { "id": "prs_pp_1", "kind": "pressure", "unit": "kPa", "baseline": 130.0, "critical": 220.0, "noise": 0.8 },
+        { "id": "tmp_pp_1", "kind": "temp", "unit": "°C", "baseline": 95.0, "critical": 350.0, "noise": 1.8 }
+      ]
+    },
+    {
+      "id": "control_room",
+      "name": "Central Control Room",
+      "x": 660, "y": 280, "w": 290, "h": 180,
+      "hazard_class": "C",
+      "workers": 5,
+      "sensors": [
+        { "id": "co_cr_1", "kind": "CO", "unit": "ppm", "baseline": 2.0, "critical": 100.0, "noise": 0.2 }
+      ]
+    }
+  ]
+}
