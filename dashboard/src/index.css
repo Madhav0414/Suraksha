@@ -1,0 +1,60 @@
+@import "tailwindcss";
+
+:root {
+  color-scheme: dark;
+}
+
+body {
+  margin: 0;
+  background: #0a0f1a;
+  color: #e2e8f0;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+}
+
+/* critical zone pulse on the plant map */
+@keyframes zonepulse {
+  0%, 100% { fill-opacity: 0.14; }
+  50% { fill-opacity: 0.4; }
+}
+.animate-zonepulse {
+  animation: zonepulse 1.2s ease-in-out infinite;
+}
+
+/* KPI tile pulse when max risk goes critical */
+@keyframes kpipulse {
+  0%, 100% { box-shadow: 0 0 0 rgba(244, 63, 94, 0); }
+  50% { box-shadow: 0 0 16px rgba(244, 63, 94, 0.5); }
+}
+.animate-kpipulse {
+  animation: kpipulse 1.2s ease-in-out infinite;
+}
+
+/* slim dark scrollbars */
+*::-webkit-scrollbar { width: 8px; height: 8px; }
+*::-webkit-scrollbar-track { background: transparent; }
+*::-webkit-scrollbar-thumb { background: #1e293b; border-radius: 8px; }
+*::-webkit-scrollbar-thumb:hover { background: #334155; }
+
+/* incident report markdown styling */
+.report h1 { font-size: 1.25rem; font-weight: 800; color: #f1f5f9; margin: 0 0 0.75rem; }
+.report h2 { font-size: 0.95rem; font-weight: 700; color: #7dd3fc; margin: 1.25rem 0 0.5rem; }
+.report p, .report li { font-size: 0.8rem; line-height: 1.55; color: #cbd5e1; margin: 0.4rem 0; }
+.report ul { padding-left: 1.1rem; list-style: disc; }
+.report strong { color: #f1f5f9; }
+.report hr { border-color: #1e293b; margin: 1rem 0; }
+.report em { color: #94a3b8; }
+.report table {
+  width: 100%; border-collapse: collapse; margin: 0.5rem 0; font-size: 0.75rem;
+}
+.report th, .report td {
+  border: 1px solid #1e293b; padding: 0.35rem 0.5rem; text-align: left;
+  color: #cbd5e1;
+}
+.report th { background: #111c33; color: #94a3b8; font-weight: 600; }
+
+@media print {
+  body { background: #fff; color: #111; }
+  .report { border: none; background: #fff; color: #111; max-height: none; }
+  .report p, .report li, .report td, .report th, .report h1 { color: #111; }
+  .report h2 { color: #0369a1; }
+}
