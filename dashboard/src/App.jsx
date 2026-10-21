@@ -20,9 +20,11 @@ export default function App() {
         <p className="animate-pulse text-sm text-slate-500">
           Connecting to plant telemetry…
         </p>
-        <p className="text-xs text-slate-600">
-          (backend: <span className="font-mono">uvicorn app.main:app --port 8000</span>)
-        </p>
+        {import.meta.env.DEV && (
+          <p className="text-xs text-slate-600">
+            (backend: <span className="font-mono">uvicorn app.main:app --port 8000</span>)
+          </p>
+        )}
       </div>
     );
   }

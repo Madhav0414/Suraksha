@@ -8,9 +8,11 @@ from __future__ import annotations
 import asyncio
 import contextlib
 import json
+from pathlib import Path
 
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel
 from sse_starlette.sse import EventSourceResponse
 
@@ -132,3 +134,10 @@ async def stream():
             runtime.broadcaster.unsubscribe(q)
 
     return EventSourceResponse(gen())
+
+
+# Hosted demo: serve the built dashboard from the same origin as the API.
+# Mounted last so every API route above takes precedence.
+DASHBOARD_DIST = Path(__file__).resolve().parents[2] / "dashboard" / "dist"
+if DASHBOARD_DIST.is_dir():
+    app.mount("/", StaticFiles(directory=DASHBOARD_DIST, html=True), name="dashboard")

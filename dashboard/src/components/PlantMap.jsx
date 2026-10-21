@@ -1,5 +1,25 @@
 import Panel from "./Panel";
-import { STATUS, levelColor } from "../theme";
+import { STATUS, levelColor, levelForScore } from "../theme";
+
+const SHORT_KIND = { pressure: "Press", temp: "Temp" };
+
+/** Live sensor readings, two per row; values tint as they near critical. */
+function ZoneReadings({ zone }) {
+  const colW = (zone.w - 28) / 2;
+  return zone.sensors.map((s, i) => {
+    const level = levelForScore(s.pct_critical);
+    return (
+      <text key={s.id} x={zone.x + 14 + (i % 2) * colW} y={zone.y + 106 + Math.floor(i / 2) * 20}
+        fontSize="12" fontFamily="Consolas, monospace">
+        <tspan fill="#64748b">{SHORT_KIND[s.kind] ?? s.kind} </tspan>
+        <tspan fill={level === "normal" ? "#e2e8f0" : levelColor(level)} fontWeight="700">
+          {s.value}
+        </tspan>
+        <tspan fill="#64748b"> {s.unit}</tspan>
+      </text>
+    );
+  });
+}
 
 function ZoneRect({ zone, selected, onSelect }) {
   const color = levelColor(zone.level);
@@ -29,6 +49,7 @@ function ZoneRect({ zone, selected, onSelect }) {
         fontWeight="700" letterSpacing="2">
         {STATUS[zone.level].label}
       </text>
+      <ZoneReadings zone={zone} />
       <text x={zone.x + 14} y={zone.y + zone.h - 12} fill="#94a3b8" fontSize="12">
         ⛑ {zone.workers} workers · class {zone.hazard_class}
       </text>

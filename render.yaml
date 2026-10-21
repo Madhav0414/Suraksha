@@ -1,0 +1,17 @@
+# Deploy on Render: render.com → New → Blueprint → pick this repository.
+services:
+  - type: web
+    name: suraksha
+    runtime: python
+    plan: free
+    # The dashboard is prebuilt into dashboard/dist and committed, so the build
+    # needs no Node. After changing the UI: cd dashboard && npm run build, commit.
+    buildCommand: pip install -r backend/requirements.txt
+    # FastAPI serves the API and the built dashboard from one origin.
+    startCommand: uvicorn app.main:app --app-dir backend --host 0.0.0.0 --port $PORT
+    healthCheckPath: /health
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.13.7
+      # No GEMINI_API_KEY on purpose: incident reports use the built-in
+      # template, and a public page must not spend someone's API credit.
